@@ -25,7 +25,7 @@
         </button>
     </div>
 
-    <div class="nav-overlay hidden lg:hidden" id="navOverlay">
+    <div class="nav-overlay hidden lg:hidden" id="navOverlay" style="z-index: 999999999">
         <nav class="nav-mobile">
             <a href="{{ route('home') }}">Home</a>
             <a href="{{ route('about') }}">About Us</a>
