@@ -2154,7 +2154,7 @@ body {
       padding-block: calc(var(--spacing) * 14);
     }
   }
-  .final-contact-cta::before {
+  .final-contact-cta::after {
     content: "";
     pointer-events: none;
     position: absolute;
@@ -4069,7 +4069,7 @@ body {
       padding-block: calc(var(--spacing) * 20);
     }
   }
-  .contact-section::before {
+  .contact-section::after {
     content: "";
     pointer-events: none;
     position: absolute;
@@ -4680,7 +4680,7 @@ body {
   height: 72px;
   flex-shrink: 0;
 }
-.svc-pipe::before {
+.svc-pipe::after {
   content: '';
   position: absolute;
   left: 50%;
