@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::query()->updateOrCreate(
-            ['email' => 'admin@kairossolutions.com'],
+            ['email' => 'admin@kairossol.io'],
             [
                 'name' => 'Kairos Super Admin',
-                'password' => 'password',
+                'password' => 'A7t9N6Z|hj!%',
                 'is_super_admin' => true,
             ],
         );
