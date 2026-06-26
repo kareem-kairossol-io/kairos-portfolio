@@ -2159,7 +2159,7 @@ body {
     pointer-events: none;
     position: absolute;
     inset: calc(var(--spacing) * 0);
-    background-image: url("../imgs/final-cta-bg.png");
+    background-image: url("assets/imgs/final-cta-bg.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
