@@ -3,6 +3,7 @@
     const menuToggle = document.getElementById('menuToggle');
     const navOverlay = document.getElementById('navOverlay');
     const navLinks = document.querySelectorAll('.nav-mobile a');
+    const pageBody = document.body;
 
     function syncHeaderAnchorOffset() {
         if (!mainHeader) {
@@ -19,6 +20,18 @@
         }
 
         mainHeader.classList.toggle('scrolled', window.scrollY >= 100);
+    }
+
+    function setMobileMenuState(isOpen) {
+        if (!menuToggle || !navOverlay) {
+            return;
+        }
+
+        menuToggle.classList.toggle('active', isOpen);
+        navOverlay.classList.toggle('hidden', !isOpen);
+        navOverlay.classList.toggle('show', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        pageBody.classList.toggle('menu-open', isOpen);
     }
 
     function observeFadeInSection(section, threshold = 0.18) {
@@ -64,24 +77,18 @@
 
     if (menuToggle && navOverlay) {
         menuToggle.addEventListener('click', function () {
-            menuToggle.classList.toggle('active');
-            navOverlay.classList.toggle('hidden');
-            navOverlay.classList.toggle('show');
+            setMobileMenuState(navOverlay.classList.contains('hidden'));
         });
 
         navLinks.forEach(function (link) {
             link.addEventListener('click', function () {
-                menuToggle.classList.remove('active');
-                navOverlay.classList.add('hidden');
-                navOverlay.classList.remove('show');
+                setMobileMenuState(false);
             });
         });
 
         navOverlay.addEventListener('click', function (event) {
             if (event.target === navOverlay) {
-                menuToggle.classList.remove('active');
-                navOverlay.classList.add('hidden');
-                navOverlay.classList.remove('show');
+                setMobileMenuState(false);
             }
         });
     }
