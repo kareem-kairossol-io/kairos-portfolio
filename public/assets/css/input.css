@@ -713,7 +713,7 @@ body {
     .final-contact-cta::before {
         content: "";
         @apply pointer-events-none absolute inset-0;
-        background-image: url("assets/imgs/final-cta-bg.png");
+        background-image: url("../imgs/final-cta-bg.png");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
